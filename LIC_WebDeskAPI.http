@@ -1,0 +1,6 @@
+@LIC_WebDeskAPI_HostAddress = http://localhost:5224
+
+GET {{LIC_WebDeskAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

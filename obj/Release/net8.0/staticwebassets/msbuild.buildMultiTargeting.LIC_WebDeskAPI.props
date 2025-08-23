@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\LIC_WebDeskAPI.props" />
+</Project>

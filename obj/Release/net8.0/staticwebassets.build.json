@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "HoG0BOGtw7s+AyY264xnOZvs3O79+alyoPSJJI/zQOU=",
+  "Source": "LIC_WebDeskAPI",
+  "BasePath": "_content/LIC_WebDeskAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

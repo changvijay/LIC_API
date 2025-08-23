@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\LIC_WebDeskAPI.props" />
+</Project>

@@ -1,0 +1,172 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\chang\\lic\\LIC_WebDeskAPI\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0F36165E-DE19-4EC6-9D4A-4F675772FA81}|LIC_WebDeskAPI.csproj|d:\\chang\\lic\\lic_webdeskapi\\controllers\\testimonialcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F36165E-DE19-4EC6-9D4A-4F675772FA81}|LIC_WebDeskAPI.csproj|solutionrelative:controllers\\testimonialcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F36165E-DE19-4EC6-9D4A-4F675772FA81}|LIC_WebDeskAPI.csproj|d:\\chang\\lic\\lic_webdeskapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F36165E-DE19-4EC6-9D4A-4F675772FA81}|LIC_WebDeskAPI.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F36165E-DE19-4EC6-9D4A-4F675772FA81}|LIC_WebDeskAPI.csproj|d:\\chang\\lic\\lic_webdeskapi\\controllers\\herosectioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F36165E-DE19-4EC6-9D4A-4F675772FA81}|LIC_WebDeskAPI.csproj|solutionrelative:controllers\\herosectioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F36165E-DE19-4EC6-9D4A-4F675772FA81}|LIC_WebDeskAPI.csproj|d:\\chang\\lic\\lic_webdeskapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{0F36165E-DE19-4EC6-9D4A-4F675772FA81}|LIC_WebDeskAPI.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F36165E-DE19-4EC6-9D4A-4F675772FA81}|LIC_WebDeskAPI.csproj|d:\\chang\\lic\\lic_webdeskapi\\controllers\\lifeinsurancecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F36165E-DE19-4EC6-9D4A-4F675772FA81}|LIC_WebDeskAPI.csproj|solutionrelative:controllers\\lifeinsurancecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F36165E-DE19-4EC6-9D4A-4F675772FA81}|LIC_WebDeskAPI.csproj|d:\\chang\\lic\\lic_webdeskapi\\controllers\\policyholderdetailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F36165E-DE19-4EC6-9D4A-4F675772FA81}|LIC_WebDeskAPI.csproj|solutionrelative:controllers\\policyholderdetailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F36165E-DE19-4EC6-9D4A-4F675772FA81}|LIC_WebDeskAPI.csproj|d:\\chang\\lic\\lic_webdeskapi\\controllers\\newscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F36165E-DE19-4EC6-9D4A-4F675772FA81}|LIC_WebDeskAPI.csproj|solutionrelative:controllers\\newscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F36165E-DE19-4EC6-9D4A-4F675772FA81}|LIC_WebDeskAPI.csproj|d:\\chang\\lic\\lic_webdeskapi\\controllers\\contactdetailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F36165E-DE19-4EC6-9D4A-4F675772FA81}|LIC_WebDeskAPI.csproj|solutionrelative:controllers\\contactdetailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F36165E-DE19-4EC6-9D4A-4F675772FA81}|LIC_WebDeskAPI.csproj|d:\\chang\\lic\\lic_webdeskapi\\controllers\\blogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F36165E-DE19-4EC6-9D4A-4F675772FA81}|LIC_WebDeskAPI.csproj|solutionrelative:controllers\\blogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\chang\\lic\\LIC_WebDeskAPI\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\chang\\lic\\LIC_WebDeskAPI\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-19T16:39:33.137Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\chang\\lic\\LIC_WebDeskAPI\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "D:\\chang\\lic\\LIC_WebDeskAPI\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-08-19T15:19:14.097Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TestimonialController.cs",
+              "DocumentMoniker": "D:\\chang\\lic\\LIC_WebDeskAPI\\Controllers\\TestimonialController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TestimonialController.cs",
+              "ToolTip": "D:\\chang\\lic\\LIC_WebDeskAPI\\Controllers\\TestimonialController.cs",
+              "RelativeToolTip": "Controllers\\TestimonialController.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAwwDoAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-17T15:28:07.021Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PolicyHolderDetailController.cs",
+              "DocumentMoniker": "D:\\chang\\lic\\LIC_WebDeskAPI\\Controllers\\PolicyHolderDetailController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PolicyHolderDetailController.cs",
+              "ToolTip": "D:\\chang\\lic\\LIC_WebDeskAPI\\Controllers\\PolicyHolderDetailController.cs",
+              "RelativeToolTip": "Controllers\\PolicyHolderDetailController.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-17T15:27:58.189Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "NEWSController.cs",
+              "DocumentMoniker": "D:\\chang\\lic\\LIC_WebDeskAPI\\Controllers\\NEWSController.cs",
+              "RelativeDocumentMoniker": "Controllers\\NEWSController.cs",
+              "ToolTip": "D:\\chang\\lic\\LIC_WebDeskAPI\\Controllers\\NEWSController.cs",
+              "RelativeToolTip": "Controllers\\NEWSController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-17T15:27:56.036Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "lifeInsuranceController.cs",
+              "DocumentMoniker": "D:\\chang\\lic\\LIC_WebDeskAPI\\Controllers\\lifeInsuranceController.cs",
+              "RelativeDocumentMoniker": "Controllers\\lifeInsuranceController.cs",
+              "ToolTip": "D:\\chang\\lic\\LIC_WebDeskAPI\\Controllers\\lifeInsuranceController.cs",
+              "RelativeToolTip": "Controllers\\lifeInsuranceController.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAADwvyIAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-17T15:27:47.14Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HeroSectionController.cs",
+              "DocumentMoniker": "D:\\chang\\lic\\LIC_WebDeskAPI\\Controllers\\HeroSectionController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HeroSectionController.cs",
+              "ToolTip": "D:\\chang\\lic\\LIC_WebDeskAPI\\Controllers\\HeroSectionController.cs",
+              "RelativeToolTip": "Controllers\\HeroSectionController.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAA1wAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-17T15:27:42.035Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ContactDetailController.cs",
+              "DocumentMoniker": "D:\\chang\\lic\\LIC_WebDeskAPI\\Controllers\\ContactDetailController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ContactDetailController.cs",
+              "ToolTip": "D:\\chang\\lic\\LIC_WebDeskAPI\\Controllers\\ContactDetailController.cs",
+              "RelativeToolTip": "Controllers\\ContactDetailController.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAA1wAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-17T15:27:36.56Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "BlogController.cs",
+              "DocumentMoniker": "D:\\chang\\lic\\LIC_WebDeskAPI\\Controllers\\BlogController.cs",
+              "RelativeDocumentMoniker": "Controllers\\BlogController.cs",
+              "ToolTip": "D:\\chang\\lic\\LIC_WebDeskAPI\\Controllers\\BlogController.cs",
+              "RelativeToolTip": "Controllers\\BlogController.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-17T15:27:30.861Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
