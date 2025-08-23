@@ -1,17 +1,16 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
-# Copy solution and project files first to leverage layer caching
+# Copy solution and project files for caching (csproj is at repo root)
 COPY *.sln ./
-COPY LIC_WebDeskAPI/*.csproj LIC_WebDeskAPI/
+COPY *.csproj ./
 RUN dotnet restore
 
 # Copy the rest of the source
 COPY . ./
-WORKDIR /src/LIC_WebDeskAPI
 
-# Publish for linux-x64 so native assets are Linux-compatible
-RUN dotnet publish -c Release -r linux-x64 --self-contained false -o /app/publish
+# Publish the project for linux-x64 so native assets are Linux-compatible
+RUN dotnet publish ./LIC_WebDeskAPI.csproj -c Release -r linux-x64 --self-contained false -o /app/publish
 
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
 WORKDIR /app
