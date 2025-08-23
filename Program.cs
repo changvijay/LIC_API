@@ -39,10 +39,12 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
-// 🔑 Force API to run on port 8080
+// 🔑 Bind to $PORT (Cloud Run injects this)
+var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
+
 builder.WebHost.ConfigureKestrel(options =>
 {
-    options.ListenAnyIP(8080);
+    options.ListenAnyIP(int.Parse(port));
 });
 
 var app = builder.Build();
@@ -51,11 +53,12 @@ app.UseSwagger();
 app.UseSwaggerUI(c =>
 {
     c.SwaggerEndpoint("/swagger/v1/swagger.json", "LIC_WebDeskAPI v1");
-    app.UseSwaggerUI(c => c.RoutePrefix = string.Empty);
+    c.RoutePrefix = string.Empty; // Swagger UI at root
 });
 
 app.UseCors("AllowFrontend");
-app.UseHttpsRedirection();
+// ❌ Do not use HTTPS redirection inside Cloud Run
+// app.UseHttpsRedirection();
 
 app.UseStaticFiles(new StaticFileOptions
 {
