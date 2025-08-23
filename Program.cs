@@ -39,6 +39,14 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
+// 🔑 Bind to $PORT (Cloud Run injects this)
+var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
+
+builder.WebHost.ConfigureKestrel(options =>
+{
+    options.ListenAnyIP(int.Parse(port));
+});
+
 var app = builder.Build();
 
 app.UseSwagger();
