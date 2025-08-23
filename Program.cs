@@ -60,12 +60,12 @@ app.UseCors("AllowFrontend");
 // ❌ Do not use HTTPS redirection inside Cloud Run
 // app.UseHttpsRedirection();
 
-app.UseStaticFiles(new StaticFileOptions
-{
-    FileProvider = new PhysicalFileProvider(
-        Path.Combine(Directory.GetCurrentDirectory(), "img")),
-    RequestPath = "/img"
-});
+// app.UseStaticFiles(new StaticFileOptions
+// {
+//     FileProvider = new PhysicalFileProvider(
+//         Path.Combine(Directory.GetCurrentDirectory(), "img")),
+//     RequestPath = "/img"
+// });
 
 app.UseAuthorization();
 app.MapControllers();
