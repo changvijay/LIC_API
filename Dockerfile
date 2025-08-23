@@ -1,12 +1,13 @@
-# Dockerfile
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
-COPY *.sln .
-COPY LIC_WebDeskAPI/*.csproj ./LIC_WebDeskAPI/
+# Copy solution and project files first to leverage layer caching
+COPY *.sln ./
+COPY LIC_WebDeskAPI/*.csproj LIC_WebDeskAPI/
 RUN dotnet restore
 
-COPY LIC_WebDeskAPI/. ./LIC_WebDeskAPI/
+# Copy the rest of the source
+COPY . ./
 WORKDIR /src/LIC_WebDeskAPI
 
 # Publish for linux-x64 so native assets are Linux-compatible
