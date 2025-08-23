@@ -20,7 +20,7 @@ WORKDIR /app
 COPY --from=build /app/publish .
 
 # Expose port 80 (or change if your app uses a different port)
-EXPOSE 80
+EXPOSE 8080
 
 # Set the entrypoint
 ENTRYPOINT ["dotnet", "LIC_WebDeskAPI.dll"]
