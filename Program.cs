@@ -16,15 +16,26 @@ builder.Services.AddTransient<IDbConnection>(sp =>
 builder.Logging.ClearProviders();
 builder.Logging.AddProvider(new FileLoggerProvider("logs/app.log"));
 
+// builder.Services.AddCors(options =>
+// {
+//     options.AddPolicy("AllowFrontend", policy =>
+//     {
+//         policy.WithOrigins("http://localhost:8080", "http://localhost:3000", "https://my-agent-portal.vercel.app")
+//               .AllowAnyHeader()
+//               .AllowAnyMethod();
+//     });
+// });
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", policy =>
     {
-        policy.WithOrigins("http://localhost:8080", "http://localhost:3000", "https://my-agent-portal.vercel.app")
-              .AllowAnyHeader()
-              .AllowAnyMethod();
+        policy.AllowAnyOrigin()
+              .AllowAnyMethod()
+              .AllowAnyHeader();
     });
 });
+
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
