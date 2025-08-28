@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\chang\\lic\\LIC_WebDeskAPI\\LIC_WebDeskAPI.csproj": {}
+    "D:\\chang\\lic\\LIC_WebDeskAPI\\LIC_API\\LIC_WebDeskAPI.csproj": {}
   },
   "projects": {
-    "D:\\chang\\lic\\LIC_WebDeskAPI\\LIC_WebDeskAPI.csproj": {
+    "D:\\chang\\lic\\LIC_WebDeskAPI\\LIC_API\\LIC_WebDeskAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\chang\\lic\\LIC_WebDeskAPI\\LIC_WebDeskAPI.csproj",
+        "projectUniqueName": "D:\\chang\\lic\\LIC_WebDeskAPI\\LIC_API\\LIC_WebDeskAPI.csproj",
         "projectName": "LIC_WebDeskAPI",
-        "projectPath": "D:\\chang\\lic\\LIC_WebDeskAPI\\LIC_WebDeskAPI.csproj",
+        "projectPath": "D:\\chang\\lic\\LIC_WebDeskAPI\\LIC_API\\LIC_WebDeskAPI.csproj",
         "packagesPath": "C:\\Users\\chang\\.nuget\\packages\\",
-        "outputPath": "D:\\chang\\lic\\LIC_WebDeskAPI\\obj\\",
+        "outputPath": "D:\\chang\\lic\\LIC_WebDeskAPI\\LIC_API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -65,6 +65,10 @@
             "MySqlConnector": {
               "target": "Package",
               "version": "[2.4.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             },
             "Npgsql": {
               "target": "Package",

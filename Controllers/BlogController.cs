@@ -34,7 +34,8 @@ namespace LIC_WebDeskAPI.Controllers
                         category AS Category,
                         author AS Author,
                         published_date AS PublishedDate,
-                        agent_id AS AgentId
+                        agent_id AS AgentId,
+                        SrcUrl
                     FROM blog
                     ORDER BY sorting_order ASC;";
 
@@ -62,7 +63,8 @@ namespace LIC_WebDeskAPI.Controllers
                                 category AS Category, 
                                 author AS Author,
                                 published_date AS PublishedDate, 
-                                agent_id AS AgentId 
+                                agent_id AS AgentId,
+                                SrcUrl
                             FROM blog 
                             WHERE id = @Id";
 
@@ -94,7 +96,8 @@ namespace LIC_WebDeskAPI.Controllers
                                 category AS Category, 
                                 author AS Author,
                                 published_date AS PublishedDate, 
-                                agent_id AS AgentId 
+                                agent_id AS AgentId,
+                                SrcUrl
                             FROM blog 
                             WHERE agent_id = @AgentId 
                             ORDER BY sorting_order ASC";
@@ -116,8 +119,8 @@ namespace LIC_WebDeskAPI.Controllers
             try
             {
                 var sql = @"INSERT INTO blog 
-                            (sorting_order, title, excerpt, image_url, category, author, published_date, agent_id) 
-                            VALUES (@SortingOrder, @Title, @Excerpt, @ImageUrl, @Category, @Author, @PublishedDate, @AgentId)";
+                            (sorting_order, title, excerpt, image_url, category, author, published_date, agent_id, SrcUrl) 
+                            VALUES (@SortingOrder, @Title, @Excerpt, @ImageUrl, @Category, @Author, @PublishedDate, @AgentId, @SrcUrl)";
 
                 await _db.ExecuteAsync(sql, model);
                 return Ok(new { status = 200, message = "Blog Created Successfully" });
@@ -142,7 +145,8 @@ namespace LIC_WebDeskAPI.Controllers
                                 category = @Category, 
                                 author = @Author, 
                                 published_date = @PublishedDate, 
-                                agent_id = @AgentId 
+                                agent_id = @AgentId,
+                                SrcUrl = @SrcUrl
                             WHERE id = @Id";
 
                 await _db.ExecuteAsync(sql, new
@@ -155,6 +159,7 @@ namespace LIC_WebDeskAPI.Controllers
                     model.Author,
                     model.PublishedDate,
                     model.AgentId,
+                    model.SrcUrl,
                     Id = id
                 });
 

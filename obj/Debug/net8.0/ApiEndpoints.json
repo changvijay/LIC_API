@@ -397,6 +397,139 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "LIC_WebDeskAPI.Controllers.PlansController",
+    "Method": "Create",
+    "RelativePath": "api/Plans",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "LIC_WebDeskAPI.PlanDetail",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LIC_WebDeskAPI.Controllers.PlansController",
+    "Method": "GetById",
+    "RelativePath": "api/Plans/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LIC_WebDeskAPI.Controllers.PlansController",
+    "Method": "Update",
+    "RelativePath": "api/Plans/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "model",
+        "Type": "LIC_WebDeskAPI.PlanDetail",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LIC_WebDeskAPI.Controllers.PlansController",
+    "Method": "Delete",
+    "RelativePath": "api/Plans/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LIC_WebDeskAPI.Controllers.PlansController",
+    "Method": "GetAll",
+    "RelativePath": "api/Plans/agent/{agentId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "agentId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LIC_WebDeskAPI.Controllers.PlansController",
+    "Method": "GetAllbyplansname",
+    "RelativePath": "api/Plans/byname/{PlanName}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "PlanName",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LIC_WebDeskAPI.Controllers.PlansController",
+    "Method": "planList",
+    "RelativePath": "api/Plans/planList/{agentId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "agentId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LIC_WebDeskAPI.Controllers.PlansController",
+    "Method": "RelatedPlans",
+    "RelativePath": "api/Plans/RelatedPlans/{PlanName}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "PlanName",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "LIC_WebDeskAPI.Controllers.PolicyHolderDetailController",
     "Method": "Create",
     "RelativePath": "api/PolicyHolderDetail",

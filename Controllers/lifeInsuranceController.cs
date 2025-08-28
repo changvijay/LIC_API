@@ -23,7 +23,7 @@ namespace LIC_WebDeskAPI.Controllers
             try
             {
                 var sql = @"SELECT id, title AS Title, subtitle AS Subtitle, description AS Description, 
-                                   icon_name AS IconName, color_class AS ColorClass, age_range AS AgeRange, 
+                                   icon_name AS IconName, age_range AS AgeRange, 
                                    min_premium AS MinPremium, popular AS Popular, agent_id AS AgentId 
                             FROM life_insurance_product";
                 var products = (await _db.QueryAsync(sql)).ToList();
@@ -95,8 +95,8 @@ namespace LIC_WebDeskAPI.Controllers
                 // MySQL replacement for RETURNING id
                 var productId = await _db.ExecuteScalarAsync<long>(@"
                     INSERT INTO life_insurance_product 
-                        (title, subtitle, description, icon_name, color_class, age_range, min_premium, popular, agent_id) 
-                    VALUES (@Title, @Subtitle, @Description, @IconName, @ColorClass, @AgeRange, @MinPremium, @Popular, @AgentId);
+                        (title, subtitle, description, icon_name, age_range, min_premium, popular, agent_id) 
+                    VALUES (@Title, @Subtitle, @Description, @IconName, @AgeRange, @MinPremium, @Popular, @AgentId);
                     SELECT LAST_INSERT_ID();", model, transaction);
 
                 foreach (var feature in model.Features)
@@ -132,19 +132,19 @@ namespace LIC_WebDeskAPI.Controllers
                     _db.Open();
                 using var transaction = _db.BeginTransaction();
 
+                // --- Update main product ---
                 await _db.ExecuteAsync(@"
-                    UPDATE life_insurance_product SET 
-                        title = @Title, subtitle = @Subtitle, description = @Description, 
-                        icon_name = @IconName, color_class = @ColorClass, age_range = @AgeRange, 
-                        min_premium = @MinPremium, popular = @Popular, agent_id = @AgentId 
-                    WHERE id = @Id",
+        UPDATE life_insurance_product SET 
+            title = @Title, subtitle = @Subtitle, description = @Description, 
+            icon_name = @IconName, age_range = @AgeRange, 
+            min_premium = @MinPremium, popular = @Popular, agent_id = @AgentId 
+        WHERE id = @Id",
                     new
                     {
                         model.Title,
                         model.Subtitle,
                         model.Description,
                         model.IconName,
-                        model.ColorClass,
                         model.AgeRange,
                         model.MinPremium,
                         model.Popular,
@@ -152,20 +152,56 @@ namespace LIC_WebDeskAPI.Controllers
                         Id = id
                     }, transaction);
 
-                await _db.ExecuteAsync("DELETE FROM life_insurance_feature WHERE product_id = @Id", new { Id = id }, transaction);
-                await _db.ExecuteAsync("DELETE FROM life_insurance_plan WHERE product_id = @Id", new { Id = id }, transaction);
 
-                foreach (var feature in model.Features)
+                // --- Sync Features ---
+                var existingFeatures = (await _db.QueryAsync<string>(
+                    "SELECT feature_text FROM life_insurance_feature WHERE product_id = @Id",
+                    new { Id = id }, transaction)).ToList();
+
+                var featuresToAdd = model.Features.Except(existingFeatures).ToList();
+                var featuresToRemove = existingFeatures.Except(model.Features).ToList();
+
+                foreach (var feature in featuresToAdd)
                 {
-                    await _db.ExecuteAsync("INSERT INTO life_insurance_feature (product_id, feature_text) VALUES (@ProductId, @FeatureText)",
+                    await _db.ExecuteAsync(
+                        "INSERT INTO life_insurance_feature (product_id, feature_text) VALUES (@ProductId, @FeatureText)",
                         new { ProductId = id, FeatureText = feature }, transaction);
                 }
 
-                foreach (var plan in model.Plans)
+                foreach (var feature in featuresToRemove)
                 {
-                    await _db.ExecuteAsync("INSERT INTO life_insurance_plan (product_id, plan_name) VALUES (@ProductId, @PlanName)",
+                    await _db.ExecuteAsync(
+                        "DELETE FROM life_insurance_feature WHERE product_id = @ProductId AND feature_text = @FeatureText",
+                        new { ProductId = id, FeatureText = feature }, transaction);
+                }
+
+
+                // --- Sync Plans ---
+                var existingPlans = (await _db.QueryAsync<string>(
+                    "SELECT plan_name FROM life_insurance_plan WHERE product_id = @Id",
+                    new { Id = id }, transaction)).ToList();
+
+                var plansToAdd = model.Plans.Except(existingPlans).ToList();
+                var plansToRemove = existingPlans.Except(model.Plans).ToList();
+
+                foreach (var plan in plansToAdd)
+                {
+                    await _db.ExecuteAsync(
+                        "INSERT INTO life_insurance_plan (product_id, plan_name) VALUES (@ProductId, @PlanName)",
                         new { ProductId = id, PlanName = plan }, transaction);
                 }
+
+                foreach (var plan in plansToRemove)
+                {
+                    await _db.ExecuteAsync(
+                        "DELETE FROM life_insurance_plan WHERE product_id = @ProductId AND plan_name = @PlanName",
+                        new { ProductId = id, PlanName = plan }, transaction);
+                    await _db.ExecuteAsync(
+                        "DELETE FROM plan_details WHERE NAME = @PlanName and agent_id = @AgentId",
+                        new { AgentId = model.AgentId, PlanName = plan }, transaction);
+
+                }
+
 
                 transaction.Commit();
                 return Ok(new { status = 200, message = "Updated Successfully" });
@@ -175,6 +211,7 @@ namespace LIC_WebDeskAPI.Controllers
                 _logger.LogError(ex, "Error updating life insurance product {Id}", id);
                 return StatusCode(500, new { status = 500, error = ex.Message });
             }
+
         }
 
         [HttpDelete("{id}")]
@@ -204,7 +241,7 @@ namespace LIC_WebDeskAPI.Controllers
             try
             {
                 var sql = @"SELECT id, title AS Title, subtitle AS Subtitle, description AS Description, 
-                                   icon_name AS IconName, color_class AS ColorClass, age_range AS AgeRange, 
+                                   icon_name AS IconName, age_range AS AgeRange, 
                                    min_premium AS MinPremium, popular AS Popular, agent_id AS AgentId 
                             FROM life_insurance_product  
                             WHERE agent_id = @AgentId";

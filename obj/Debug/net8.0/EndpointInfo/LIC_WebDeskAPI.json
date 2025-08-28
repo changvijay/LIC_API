@@ -622,6 +622,211 @@
         }
       }
     },
+    "/api/Plans/agent/{agentId}": {
+      "get": {
+        "tags": [
+          "Plans"
+        ],
+        "parameters": [
+          {
+            "name": "agentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Plans/byname/{PlanName}": {
+      "get": {
+        "tags": [
+          "Plans"
+        ],
+        "parameters": [
+          {
+            "name": "PlanName",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Plans/RelatedPlans/{PlanName}": {
+      "get": {
+        "tags": [
+          "Plans"
+        ],
+        "parameters": [
+          {
+            "name": "PlanName",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Plans/{id}": {
+      "get": {
+        "tags": [
+          "Plans"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Plans"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PlanDetail"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PlanDetail"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PlanDetail"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Plans"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Plans": {
+      "post": {
+        "tags": [
+          "Plans"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PlanDetail"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PlanDetail"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PlanDetail"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Plans/planList/{agentId}": {
+      "get": {
+        "tags": [
+          "Plans"
+        ],
+        "parameters": [
+          {
+            "name": "agentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/PolicyHolderDetail/agent/{agentId}": {
       "get": {
         "tags": [
@@ -976,6 +1181,10 @@
             "type": "integer",
             "format": "int32",
             "nullable": true
+          },
+          "srcUrl": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -1075,10 +1284,6 @@
             "type": "string",
             "nullable": true
           },
-          "colorClass": {
-            "type": "string",
-            "nullable": true
-          },
           "ageRange": {
             "type": "string",
             "nullable": true
@@ -1121,6 +1326,93 @@
           "password": {
             "type": "string",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PlanDetail": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "category": {
+            "type": "string",
+            "nullable": true
+          },
+          "minEntryAge": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "maxEntryAge": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "maturityAge": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "minSumAssured": {
+            "type": "number",
+            "format": "double"
+          },
+          "maxSumAssured": {
+            "type": "number",
+            "format": "double"
+          },
+          "premiumPaymentTerm": {
+            "type": "string",
+            "nullable": true
+          },
+          "policyTerm": {
+            "type": "string",
+            "nullable": true
+          },
+          "features": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "benefits": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "eligibility": {
+            "type": "string",
+            "nullable": true
+          },
+          "documentsRequired": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "popularity": {
+            "type": "string",
+            "nullable": true
+          },
+          "claimSettlementRatio": {
+            "type": "string",
+            "nullable": true
+          },
+          "agentId": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false

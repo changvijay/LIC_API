@@ -16,16 +16,6 @@ builder.Services.AddTransient<IDbConnection>(sp =>
 builder.Logging.ClearProviders();
 builder.Logging.AddProvider(new FileLoggerProvider("logs/app.log"));
 
-// builder.Services.AddCors(options =>
-// {
-//     options.AddPolicy("AllowFrontend", policy =>
-//     {
-//         policy.WithOrigins("http://localhost:8080", "http://localhost:3000", "https://my-agent-portal.vercel.app")
-//               .AllowAnyHeader()
-//               .AllowAnyMethod();
-//     });
-// });
-
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", policy =>
@@ -50,7 +40,6 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
-// 🔑 Bind to $PORT (Cloud Run injects this)
 var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
 
 builder.WebHost.ConfigureKestrel(options =>
@@ -64,19 +53,11 @@ app.UseSwagger();
 app.UseSwaggerUI(c =>
 {
     c.SwaggerEndpoint("/swagger/v1/swagger.json", "LIC_WebDeskAPI v1");
-    c.RoutePrefix = string.Empty; // Swagger UI at root
+    c.RoutePrefix = string.Empty;  
 });
 
 app.UseCors("AllowFrontend");
-// ❌ Do not use HTTPS redirection inside Cloud Run
-// app.UseHttpsRedirection();
 
-// app.UseStaticFiles(new StaticFileOptions
-// {
-//     FileProvider = new PhysicalFileProvider(
-//         Path.Combine(Directory.GetCurrentDirectory(), "img")),
-//     RequestPath = "/img"
-// });
 
 app.UseAuthorization();
 app.MapControllers();

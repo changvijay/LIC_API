@@ -34,6 +34,8 @@
         public string? Author { get; set; }
         public DateTime? PublishedDate { get; set; }
         public int? AgentId { get; set; }
+        public string SrcUrl { get; set; }
+
     }
     public class LifeInsuranceProductRequest
     {
@@ -41,7 +43,6 @@
         public string? Subtitle { get; set; }
         public string? Description { get; set; }
         public string? IconName { get; set; }
-        public string? ColorClass { get; set; }
         public string? AgeRange { get; set; }
         public string? MinPremium { get; set; }
         public bool Popular { get; set; }
@@ -92,4 +93,62 @@
         public int AgentId { get; set; }
         public string Remarks { get; set; }
     }
+
+    public class PlanDetail
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public string Category { get; set; }
+        public int MinEntryAge { get; set; }
+        public int MaxEntryAge { get; set; }
+        public int MaturityAge { get; set; }
+        public decimal MinSumAssured { get; set; }
+        public decimal MaxSumAssured { get; set; }
+        public string PremiumPaymentTerm { get; set; }
+        public string PolicyTerm { get; set; }
+        public List<string> Features { get; set; }
+        public List<string> Benefits { get; set; }
+        public string Eligibility { get; set; }
+        public List<string> DocumentsRequired { get; set; }
+        public string Popularity { get; set; }
+        public string ClaimSettlementRatio { get; set; } 
+        public int AgentId { get; set; }
+    }
+    public class PlanDetailRow
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public string Category { get; set; }
+        public int MinEntryAge { get; set; }
+        public int MaxEntryAge { get; set; }
+        public int MaturityAge { get; set; }
+        public decimal MinSumAssured { get; set; }
+        public decimal MaxSumAssured { get; set; }
+        public string PremiumPaymentTerm { get; set; }
+        public string PolicyTerm { get; set; }
+        public string Features { get; set; }
+        public string Benefits { get; set; }
+        public string Eligibility { get; set; }
+        public string DocumentsRequired { get; set; }
+        public string Popularity { get; set; }
+        public string ClaimSettlementRatio { get; set; }
+        public int AgentId { get; set; }
+    }
+    public class PlanList
+    {
+        public string Title { get; set; }
+        public string Plan_Name { get; set; }
+    }
+
+    public class RelatedPlans
+    {
+        public string id { get; set; }
+        public string NAME { get; set; }
+        public string category { get; set; }
+        public string DESCRIPTION { get; set; }
+
+    }
+
 }
