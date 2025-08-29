@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LIC_WebDeskAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+be0360882de8bd1071c7310371c17bdb74c434db")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+edbf3d1e60d68d46ca8ddc67884d220ad79f1f14")]
 [assembly: System.Reflection.AssemblyProductAttribute("LIC_WebDeskAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LIC_WebDeskAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

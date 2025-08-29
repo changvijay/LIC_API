@@ -311,10 +311,9 @@ namespace LIC_WebDeskAPI.Controllers
                             WHERE p.agent_id = @agentId
                                   AND d.name IS NULL
                                 GROUP BY p.title;
+                ";
 
-                    ";
-
-                var result = await _db.QueryFirstOrDefaultAsync<PlanList>(sql, new { agentId = agentId });
+                var result = await _db.QueryAsync<PlanList>(sql, new { agentId = agentId });
 
                 if (result == null)
                     return NotFound(new { status = 404, message = "Plan Not Found" });
