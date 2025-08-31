@@ -484,7 +484,7 @@
   {
     "ContainingType": "LIC_WebDeskAPI.Controllers.PlansController",
     "Method": "GetAllbyplansname",
-    "RelativePath": "api/Plans/byname/{PlanName}",
+    "RelativePath": "api/Plans/byname/{PlanName}/{agentId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -492,6 +492,11 @@
       {
         "Name": "PlanName",
         "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "agentId",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
@@ -516,7 +521,7 @@
   {
     "ContainingType": "LIC_WebDeskAPI.Controllers.PlansController",
     "Method": "RelatedPlans",
-    "RelativePath": "api/Plans/RelatedPlans/{PlanName}",
+    "RelativePath": "api/Plans/RelatedPlans/{PlanName}/{agentId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -524,6 +529,11 @@
       {
         "Name": "PlanName",
         "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "agentId",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],

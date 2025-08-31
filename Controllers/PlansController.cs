@@ -85,8 +85,8 @@ namespace LIC_WebDeskAPI.Controllers
             }
         }
 
-        [HttpGet("byname/{PlanName}")]
-        public async Task<IActionResult> GetAllbyplansname(string PlanName)
+        [HttpGet("byname/{PlanName}/{agentId}")]
+        public async Task<IActionResult> GetAllbyplansname(string PlanName, int agentId)
         {
             try
             {
@@ -108,7 +108,7 @@ namespace LIC_WebDeskAPI.Controllers
                             documents_required AS DocumentsRequired,
                             popularity AS Popularity,
                             claim_settlement_ratio AS ClaimSettlementRatio
-                        FROM plan_details where Name = '{PlanName}' ";
+                        FROM plan_details where Name = '{PlanName}' and agent_id = {agentId}";
 
                 var result = await _db.QueryAsync<PlanDetailRow>(sql);
                 return Ok(new { status = 200, data = result });
@@ -120,12 +120,12 @@ namespace LIC_WebDeskAPI.Controllers
             }
         }
 
-        [HttpGet("RelatedPlans/{PlanName}")]
-        public async Task<IActionResult> RelatedPlans(string PlanName)
+        [HttpGet("RelatedPlans/{PlanName}/{agentId}")]
+        public async Task<IActionResult> RelatedPlans(string PlanName, int agentId)
         {
             try
             {
-                var sql = $@"SELECT id, NAME, category,DESCRIPTION FROM `plan_details` WHERE category = '{PlanName}'";
+                var sql = $@"SELECT id, NAME, category,DESCRIPTION FROM `plan_details` WHERE category = '{PlanName}' and agent_id = {agentId}";
 
                 var result = await _db.QueryAsync<RelatedPlans>(sql);
                 return Ok(new { status = 200, data = result });
@@ -136,7 +136,6 @@ namespace LIC_WebDeskAPI.Controllers
                 return StatusCode(500, new { status = 500, error = ex.Message });
             }
         }
-
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)

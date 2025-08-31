@@ -645,7 +645,7 @@
         }
       }
     },
-    "/api/Plans/byname/{PlanName}": {
+    "/api/Plans/byname/{PlanName}/{agentId}": {
       "get": {
         "tags": [
           "Plans"
@@ -658,6 +658,15 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "agentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
           }
         ],
         "responses": {
@@ -667,7 +676,7 @@
         }
       }
     },
-    "/api/Plans/RelatedPlans/{PlanName}": {
+    "/api/Plans/RelatedPlans/{PlanName}/{agentId}": {
       "get": {
         "tags": [
           "Plans"
@@ -679,6 +688,15 @@
             "required": true,
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "agentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
             }
           }
         ],
